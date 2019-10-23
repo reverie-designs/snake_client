@@ -10,7 +10,9 @@ const connect = function() {
   });
   // interpret incoming data as text
   conn.setEncoding('utf8'); 
-
+  conn.on('data', (data) => { //once connection established
+    console.log('Server says: ', data); //recieve data
+  });
   return conn;
 }
 

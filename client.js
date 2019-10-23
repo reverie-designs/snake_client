@@ -2,10 +2,12 @@
  * Establishes connection with the game server
  */
 const net = require('net');
+const {IP, PORT} = require('./constants');
+// const PORT = require('./constants');
 const connect = function() {
   const conn = net.createConnection({ 
-    host: '172.46.2.204', //server ip address
-    port: 50541 //port that is open for connection
+    host: IP, //server ip address
+    port: PORT //port that is open for connection
   });
   // interpret incoming data as text
   conn.setEncoding('utf8'); 
@@ -20,6 +22,8 @@ const connect = function() {
     // setInterval(()=> conn.write('Move: up'), 900);
     // setTimeout(()=> conn.write('Move: left'), 50);
     // setInterval(()=> conn.write('Move: right'), 650);
+    let shoe = 'snakes in a shoe!'
+    // conn.write('Say: snakes in a shoe');
   });
   return conn;
 }

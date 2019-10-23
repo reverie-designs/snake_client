@@ -22,6 +22,12 @@ const setUpInput = function(conn) {
       if (key === '\u0064'){
         conn.write('Move: right');
       }
+      if (key === '\u0067'){
+        conn.write('Say: snakeySss');
+      }
+      if (key === '\u0068'){
+        conn.write('Say: hahahaha🤣');
+      }
       
     }); 
   };
